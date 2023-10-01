@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */; };
+		30C469F22AC9D2C800019DEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C469F12AC9D2C800019DEE /* ContentView.swift */; };
+		30C469F42AC9D2C900019DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C469F32AC9D2C900019DEE /* Assets.xcassets */; };
+		30C469F72AC9D2C900019DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C469F62AC9D2C900019DEE /* Preview Assets.xcassets */; };
+		30C46A022AC9D2C900019DEE /* Desk_ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A012AC9D2C900019DEE /* Desk_ControllerTests.swift */; };
+		30C46A0C2AC9D2C900019DEE /* Desk_ControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A0B2AC9D2C900019DEE /* Desk_ControllerUITests.swift */; };
+		30C46A0E2AC9D2C900019DEE /* Desk_ControllerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A0D2AC9D2C900019DEE /* Desk_ControllerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30C469FE2AC9D2C900019DEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30C469E42AC9D2C800019DEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30C469EB2AC9D2C800019DEE;
+			remoteInfo = "Desk Controller";
+		};
+		30C46A082AC9D2C900019DEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30C469E42AC9D2C800019DEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30C469EB2AC9D2C800019DEE;
+			remoteInfo = "Desk Controller";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30C469EC2AC9D2C800019DEE /* Desk Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desk Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerApp.swift; sourceTree = "<group>"; };
+		30C469F12AC9D2C800019DEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		30C469F32AC9D2C900019DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30C469F62AC9D2C900019DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30C469F82AC9D2C900019DEE /* Desk_Controller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Desk_Controller.entitlements; sourceTree = "<group>"; };
+		30C469FD2AC9D2C900019DEE /* Desk ControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desk ControllerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C46A012AC9D2C900019DEE /* Desk_ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerTests.swift; sourceTree = "<group>"; };
+		30C46A072AC9D2C900019DEE /* Desk ControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desk ControllerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C46A0B2AC9D2C900019DEE /* Desk_ControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerUITests.swift; sourceTree = "<group>"; };
+		30C46A0D2AC9D2C900019DEE /* Desk_ControllerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30C469E92AC9D2C800019DEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C469FA2AC9D2C900019DEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C46A042AC9D2C900019DEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30C469E32AC9D2C800019DEE = {
+			isa = PBXGroup;
+			children = (
+				30C469EE2AC9D2C800019DEE /* Desk Controller */,
+				30C46A002AC9D2C900019DEE /* Desk ControllerTests */,
+				30C46A0A2AC9D2C900019DEE /* Desk ControllerUITests */,
+				30C469ED2AC9D2C800019DEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30C469ED2AC9D2C800019DEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30C469EC2AC9D2C800019DEE /* Desk Controller.app */,
+				30C469FD2AC9D2C900019DEE /* Desk ControllerTests.xctest */,
+				30C46A072AC9D2C900019DEE /* Desk ControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30C469EE2AC9D2C800019DEE /* Desk Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */,
+				30C469F12AC9D2C800019DEE /* ContentView.swift */,
+				30C469F32AC9D2C900019DEE /* Assets.xcassets */,
+				30C469F82AC9D2C900019DEE /* Desk_Controller.entitlements */,
+				30C469F52AC9D2C900019DEE /* Preview Content */,
+			);
+			path = "Desk Controller";
+			sourceTree = "<group>";
+		};
+		30C469F52AC9D2C900019DEE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				30C469F62AC9D2C900019DEE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30C46A002AC9D2C900019DEE /* Desk ControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				30C46A012AC9D2C900019DEE /* Desk_ControllerTests.swift */,
+			);
+			path = "Desk ControllerTests";
+			sourceTree = "<group>";
+		};
+		30C46A0A2AC9D2C900019DEE /* Desk ControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30C46A0B2AC9D2C900019DEE /* Desk_ControllerUITests.swift */,
+				30C46A0D2AC9D2C900019DEE /* Desk_ControllerUITestsLaunchTests.swift */,
+			);
+			path = "Desk ControllerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30C469EB2AC9D2C800019DEE /* Desk Controller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C46A112AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk Controller" */;
+			buildPhases = (
+				30C469E82AC9D2C800019DEE /* Sources */,
+				30C469E92AC9D2C800019DEE /* Frameworks */,
+				30C469EA2AC9D2C800019DEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Desk Controller";
+			productName = "Desk Controller";
+			productReference = 30C469EC2AC9D2C800019DEE /* Desk Controller.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30C469FC2AC9D2C900019DEE /* Desk ControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C46A142AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk ControllerTests" */;
+			buildPhases = (
+				30C469F92AC9D2C900019DEE /* Sources */,
+				30C469FA2AC9D2C900019DEE /* Frameworks */,
+				30C469FB2AC9D2C900019DEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30C469FF2AC9D2C900019DEE /* PBXTargetDependency */,
+			);
+			name = "Desk ControllerTests";
+			productName = "Desk ControllerTests";
+			productReference = 30C469FD2AC9D2C900019DEE /* Desk ControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30C46A062AC9D2C900019DEE /* Desk ControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C46A172AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk ControllerUITests" */;
+			buildPhases = (
+				30C46A032AC9D2C900019DEE /* Sources */,
+				30C46A042AC9D2C900019DEE /* Frameworks */,
+				30C46A052AC9D2C900019DEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30C46A092AC9D2C900019DEE /* PBXTargetDependency */,
+			);
+			name = "Desk ControllerUITests";
+			productName = "Desk ControllerUITests";
+			productReference = 30C46A072AC9D2C900019DEE /* Desk ControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30C469E42AC9D2C800019DEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					30C469EB2AC9D2C800019DEE = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					30C469FC2AC9D2C900019DEE = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 30C469EB2AC9D2C800019DEE;
+					};
+					30C46A062AC9D2C900019DEE = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 30C469EB2AC9D2C800019DEE;
+					};
+				};
+			};
+			buildConfigurationList = 30C469E72AC9D2C800019DEE /* Build configuration list for PBXProject "Desk Controller" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30C469E32AC9D2C800019DEE;
+			productRefGroup = 30C469ED2AC9D2C800019DEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30C469EB2AC9D2C800019DEE /* Desk Controller */,
+				30C469FC2AC9D2C900019DEE /* Desk ControllerTests */,
+				30C46A062AC9D2C900019DEE /* Desk ControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30C469EA2AC9D2C800019DEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C469F72AC9D2C900019DEE /* Preview Assets.xcassets in Resources */,
+				30C469F42AC9D2C900019DEE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C469FB2AC9D2C900019DEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C46A052AC9D2C900019DEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30C469E82AC9D2C800019DEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C469F22AC9D2C800019DEE /* ContentView.swift in Sources */,
+				30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C469F92AC9D2C900019DEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C46A022AC9D2C900019DEE /* Desk_ControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C46A032AC9D2C900019DEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C46A0C2AC9D2C900019DEE /* Desk_ControllerUITests.swift in Sources */,
+				30C46A0E2AC9D2C900019DEE /* Desk_ControllerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30C469FF2AC9D2C900019DEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30C469EB2AC9D2C800019DEE /* Desk Controller */;
+			targetProxy = 30C469FE2AC9D2C900019DEE /* PBXContainerItemProxy */;
+		};
+		30C46A092AC9D2C900019DEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30C469EB2AC9D2C800019DEE /* Desk Controller */;
+			targetProxy = 30C46A082AC9D2C900019DEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		30C46A0F2AC9D2C900019DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30C46A102AC9D2C900019DEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		30C46A122AC9D2C900019DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Desk Controller/Desk_Controller.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Desk Controller/Preview Content\"";
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-Controller";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30C46A132AC9D2C900019DEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Desk Controller/Desk_Controller.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Desk Controller/Preview Content\"";
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-Controller";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		30C46A152AC9D2C900019DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-ControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desk Controller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Desk Controller";
+			};
+			name = Debug;
+		};
+		30C46A162AC9D2C900019DEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-ControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desk Controller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Desk Controller";
+			};
+			name = Release;
+		};
+		30C46A182AC9D2C900019DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-ControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Desk Controller";
+			};
+			name = Debug;
+		};
+		30C46A192AC9D2C900019DEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HS8PVR3BLT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-ControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Desk Controller";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30C469E72AC9D2C800019DEE /* Build configuration list for PBXProject "Desk Controller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C46A0F2AC9D2C900019DEE /* Debug */,
+				30C46A102AC9D2C900019DEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C46A112AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk Controller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C46A122AC9D2C900019DEE /* Debug */,
+				30C46A132AC9D2C900019DEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C46A142AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk ControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C46A152AC9D2C900019DEE /* Debug */,
+				30C46A162AC9D2C900019DEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C46A172AC9D2C900019DEE /* Build configuration list for PBXNativeTarget "Desk ControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C46A182AC9D2C900019DEE /* Debug */,
+				30C46A192AC9D2C900019DEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30C469E42AC9D2C800019DEE /* Project object */;
+}
