@@ -10,7 +10,7 @@ import Combine
 
 @main
 struct Desk_ControllerApp: App {
-    @StateObject private var controller: DeskController = DeskController()
+    @StateObject private var btDelegate: CBManagerDelegate = CBManagerDelegate()
     
     var body: some Scene {
         // MARK: - Remove the actual app window & dock item, so that there will only be the menu bar item
@@ -20,10 +20,9 @@ struct Desk_ControllerApp: App {
         // MARK: - MenuBarExtra
         MenuBarExtra {
             MenuItemsView()
-                .environmentObject(controller)
+                .environmentObject(btDelegate)
         } label: {
-            Label("Table Controller", systemImage: controller.controllerState != .inactive ? "table.furniture.fill" : "table.furniture")
+            Label("Table Controller", systemImage: btDelegate.controllerState != .inactive ? "table.furniture.fill" : "table.furniture")
         }
-
     }
 }

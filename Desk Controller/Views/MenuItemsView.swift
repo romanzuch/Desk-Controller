@@ -9,27 +9,20 @@ import SwiftUI
 
 struct MenuItemsView: View {
     
-    @EnvironmentObject private var controller: DeskController
+    @EnvironmentObject private var btDelegate: CBManagerDelegate
     
     var body: some View {
         // MenuItems
-        ForEach(controller.getMenuItems(), id: \.title) { menuItem in
-            Button(action: {
-                menuItem.function()
-            }, label: {
+        ForEach(self.btDelegate.getMenuItems(), id: \.uuid) { item in
+            if item.divider == true {
+                Divider()
+            }
+            Button {
+                item.function()
+            } label: {
                 HStack {
-                    Image(systemName: menuItem.icon)
-                    Text(menuItem.title)
-                }
-            })
-        }
-        if controller.controllerState == .searching {
-            Divider()
-            Text("<-- Geräte -->")
-            // Devices
-            ForEach(controller.devices, id: \.self) { device in
-                Menu(device.nameOrAddress) {
-                    Button("Verbinden") {}
+                    Image(systemName: item.icon)
+                    Text(item.title)
                 }
             }
         }
@@ -45,5 +38,5 @@ struct MenuItemsView: View {
 
 #Preview {
     MenuItemsView()
-        .environmentObject(DeskController())
+        .environmentObject(CBManagerDelegate())
 }

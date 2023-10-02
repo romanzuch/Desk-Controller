@@ -10,7 +10,5 @@ import Foundation
 enum ControllerState {
     case inactive
     case active
-    case searching
     case connected
-    case working
 }

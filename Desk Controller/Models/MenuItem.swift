@@ -8,7 +8,9 @@
 import Foundation
 
 struct MenuItem {
+    let uuid: UUID = UUID()
     var title: String
     var icon: String
     var function: () -> Void
+    var divider: Bool?
 }
