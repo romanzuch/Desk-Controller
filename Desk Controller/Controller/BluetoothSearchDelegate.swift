@@ -22,6 +22,7 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
     //MARK: - Movement Values
     private var moveToPositionValue: Float? = nil
     private var moveToPositionTimer: Timer?
+    private var currentMoveDirection: MovementDirection = .stop
     
     // MARK: - Initialization
     override init() {
@@ -147,22 +148,43 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
     private func stopMoving() {
         self.tableIsMoving = false
         var movementData = getMovementData(direction: .stop)
-        self.peripheral?.writeValue(movementData, for: self.characteristicControl, type: CBCharacteristicWriteType.withResponse)
+        self.peripheral?.writeValue(movementData, for: (self.desk?.controlCharacteristic!)!, type: CBCharacteristicWriteType.withResponse)
     }
     
-    func moveToPosition(position: Float) {
-        self.moveToPositionValue = position
-        self.handleMoveToPosition()
-        print("STARTING TO MOVE TO POSITION \(position)")
+    func moveToPosition(state: DeskState) {
         
-        self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { timer in
-            print("Moving >>> \(self.desk?.position! ?? 0.0)")
-            if self.moveToPositionValue == nil {
-                timer.invalidate()
-            } else {
-                self.handleMoveToPosition()
+        if self.desk?.currentDeskState != state {
+            self.desk?.currentDeskState = state
+            var position: Float?
+            switch state {
+            case .low:
+                position = 62.0
+            case .mid:
+                position = 87.0
+            case .high:
+                position = 120.0
+            case .unknown:
+                position = 87.0
             }
-        })
+            
+            if let position = position {
+                self.moveToPositionValue = position
+                self.handleMoveToPosition()
+                print("STARTING TO MOVE TO POSITION \(position)")
+                
+                self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { timer in
+                    print("Moving >>> \(self.desk?.position! ?? 0.0)")
+                    let distance: Float = (self.desk?.position ?? 0.0) - position
+                    print("Distance to desired position: \(distance)")
+                    if self.moveToPositionValue == nil || distance <= 0.5 || distance >= -0.5 {
+                        self.stopMoving()
+                        timer.invalidate()
+                    } else {
+                        self.handleMoveToPosition()
+                    }
+                })
+            }
+        } else { return }
     }
     
     func handleMoveToPosition() {
@@ -190,6 +212,7 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                     title: "Hoch",
                     icon: "chevron.up",
                     function: {
+                        self.desk?.currentDeskState = .unknown
                         self.moveTable(direction: .up)
                     }
                 ),
@@ -197,6 +220,7 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                     title: "Runter",
                     icon: "chevron.down",
                     function: {
+                        self.desk?.currentDeskState = .unknown
                         self.moveTable(direction: .down)
                     }
                 ),
@@ -204,7 +228,7 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                     title: "Niedrig",
                     icon: "dial.low",
                     function: {
-                        self.moveToPosition(position: 62.0)
+                        self.moveToPosition(state: .low)
                     },
                     divider: true
                 ),
@@ -212,14 +236,14 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                     title: "Mittel",
                     icon: "dial.medium",
                     function: {
-                        self.moveToPosition(position: 87.0)
+                        self.moveToPosition(state: .mid)
                     }
                 ),
                 MenuItem(
                     title: "Hoch",
                     icon: "dial.high",
                     function: {
-                        self.moveToPosition(position: 120.0)
+                        self.moveToPosition(state: .high)
                     }
                 )
             ]

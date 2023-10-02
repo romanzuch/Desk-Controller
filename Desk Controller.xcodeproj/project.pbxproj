@@ -21,6 +21,7 @@
 		30C46A272ACADDD600019DEE /* MovementDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A262ACADDD600019DEE /* MovementDirection.swift */; };
 		30C46A2D2ACB029900019DEE /* LinakPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A2C2ACB029900019DEE /* LinakPeripheral.swift */; };
 		30C46A312ACB262600019DEE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A302ACB262600019DEE /* Data.swift */; };
+		30C46A342ACB351900019DEE /* DeskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A332ACB351900019DEE /* DeskState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		30C46A262ACADDD600019DEE /* MovementDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDirection.swift; sourceTree = "<group>"; };
 		30C46A2C2ACB029900019DEE /* LinakPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinakPeripheral.swift; sourceTree = "<group>"; };
 		30C46A302ACB262600019DEE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		30C46A332ACB351900019DEE /* DeskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				30C46A1D2AC9F5BD00019DEE /* ControllerState.swift */,
 				30C46A212AC9F5EA00019DEE /* MenuItem.swift */,
 				30C46A262ACADDD600019DEE /* MovementDirection.swift */,
+				30C46A332ACB351900019DEE /* DeskState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				30C46A222AC9F5EA00019DEE /* MenuItem.swift in Sources */,
 				30C46A252ACAA48700019DEE /* MenuItemsView.swift in Sources */,
 				30C46A272ACADDD600019DEE /* MovementDirection.swift in Sources */,
+				30C46A342ACB351900019DEE /* DeskState.swift in Sources */,
 				30C46A2D2ACB029900019DEE /* LinakPeripheral.swift in Sources */,
 				30C46A312ACB262600019DEE /* Data.swift in Sources */,
 				30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */,

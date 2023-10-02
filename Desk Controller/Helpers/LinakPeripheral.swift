@@ -46,6 +46,7 @@ class LinakPeripheral: NSObject {
     let peripheral: CBPeripheral
     var speed: Float = 0.0
     var deskOffset: Float = 62.5
+    var currentDeskState: DeskState = .unknown
     public var position: Float? {
         didSet {
         // print("\(position)cm")

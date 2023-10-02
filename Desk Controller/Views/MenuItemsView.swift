@@ -41,7 +41,7 @@ struct MenuItemsView: View {
         
         // MARK: - Add a button to enable the user to quit the application
         Divider()
-        Button("Quit") {
+        Button("Beenden") {
             NSApplication.shared.terminate(nil)
         }
         .keyboardShortcut("q")
