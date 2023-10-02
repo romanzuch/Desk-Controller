@@ -27,6 +27,18 @@ struct MenuItemsView: View {
             }
         }
         
+        if btDelegate.tableIsMoving {
+            Button {
+                btDelegate.moveTable(direction: .stop)
+            } label: {
+                HStack {
+                    Image(systemName: "stop.circle")
+                    Text("Stop")
+                }
+            }
+
+        }
+        
         // MARK: - Add a button to enable the user to quit the application
         Divider()
         Button("Quit") {

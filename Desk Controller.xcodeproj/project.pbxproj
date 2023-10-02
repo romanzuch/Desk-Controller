@@ -20,6 +20,7 @@
 		30C46A252ACAA48700019DEE /* MenuItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A242ACAA48700019DEE /* MenuItemsView.swift */; };
 		30C46A272ACADDD600019DEE /* MovementDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A262ACADDD600019DEE /* MovementDirection.swift */; };
 		30C46A2D2ACB029900019DEE /* LinakPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A2C2ACB029900019DEE /* LinakPeripheral.swift */; };
+		30C46A312ACB262600019DEE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A302ACB262600019DEE /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		30C46A242ACAA48700019DEE /* MenuItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsView.swift; sourceTree = "<group>"; };
 		30C46A262ACADDD600019DEE /* MovementDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDirection.swift; sourceTree = "<group>"; };
 		30C46A2C2ACB029900019DEE /* LinakPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinakPeripheral.swift; sourceTree = "<group>"; };
+		30C46A302ACB262600019DEE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		30C469EE2AC9D2C800019DEE /* Desk Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30C46A2F2ACB261E00019DEE /* Extensions */,
 				30C46A2E2ACB134900019DEE /* Models */,
 				30C46A2B2ACB028C00019DEE /* Helpers */,
 				30C46A232ACAA46800019DEE /* Views */,
@@ -177,6 +180,14 @@
 				30C46A262ACADDD600019DEE /* MovementDirection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		30C46A2F2ACB261E00019DEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30C46A302ACB262600019DEE /* Data.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 				30C46A252ACAA48700019DEE /* MenuItemsView.swift in Sources */,
 				30C46A272ACADDD600019DEE /* MovementDirection.swift in Sources */,
 				30C46A2D2ACB029900019DEE /* LinakPeripheral.swift in Sources */,
+				30C46A312ACB262600019DEE /* Data.swift in Sources */,
 				30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

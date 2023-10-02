@@ -8,29 +8,25 @@
 import SwiftUI
 import CoreBluetooth
 
-class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
     
     @Published var cbManager: CBCentralManager = CBCentralManager()
     @Published var tableIsConnected: Bool = false
+    @Published var tableIsMoving: Bool = false
     @Published var peripheral: CBPeripheral?
+    @Published var desk: LinakPeripheral?
     @Published var controllerState: ControllerState = .inactive
     @Published var characteristicControl: CBCharacteristic!
     @Published var characteristicPosition: CBCharacteristic!
     
     //MARK: - Movement Values
-    @Published var currentPosition: Double = 0.0
-    private var moveToPositionValue: Double? = nil
+    private var moveToPositionValue: Float? = nil
     private var moveToPositionTimer: Timer?
-    private let valueMoveUp: UInt16 = 71 // pack("<H", [71, 0])
-    private let valueMoveDown: UInt16 = 70 // pack("<H", [70, 0])
-    private let valueStopMove: UInt16 = 255 // pack("<H", [255, 0])
-    private let deskOffset = 62.5
     
     // MARK: - Initialization
     override init() {
         super.init()
         cbManager.delegate = self
-        cbManager.scanForPeripherals(withServices: nil)
     }
     
     //MARK: - Central Manager
@@ -49,7 +45,9 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, C
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
     {
         if peripheral.identifier.uuidString == LinakPeripheral.identifier.uuidString {
+            let desk: LinakPeripheral = LinakPeripheral(peripheral: peripheral)
             self.peripheral = peripheral
+            self.desk = desk
             central.connect(peripheral)
             central.stopScan()
         }
@@ -59,7 +57,6 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, C
         print("Connected to \(peripheral)")
         self.controllerState = .connected
         self.tableIsConnected = true
-        self.peripheral!.delegate = self
         self.peripheral!.discoverServices(LinakPeripheral.allServices)
     }
     
@@ -95,25 +92,30 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, C
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("Characteristics changed to \(characteristic)")
+        // self.updatePosition(characteristic: characteristic)
     }
     
     //MARK: - Table Movement
     func moveTable(direction: MovementDirection) {
         guard let peripheral: CBPeripheral = self.peripheral else { return }
         let movementData: Data = self.getMovementData(direction: direction)
-        peripheral.writeValue(movementData, for: self.characteristicControl, type: CBCharacteristicWriteType.withResponse)
+        self.tableIsMoving = true
+        peripheral.writeValue(movementData, for: self.desk!.controlCharacteristic!, type: CBCharacteristicWriteType.withResponse)
     }
     
     func updatePosition(characteristic: CBCharacteristic) {
+        print("Updating position...")
         if (characteristic.value != nil && characteristic.uuid == LinakPeripheral.characteristicPosition) {
             let byteArray: [UInt8] = [UInt8](characteristic.value!)
             if (byteArray.indices.contains(0) && byteArray.indices.contains(1)) {
                 do {
                     if let position = byteArray[0] as? Int {
-                        let formattedPosition = Double(round(Double(position) + (self.deskOffset * 100)) / 100)
-                        let roundedPosition = Double(round(formattedPosition * 0.5) / 0.5)
-                        self.currentPosition = roundedPosition
+                        let deskPosition: Float = desk!.position ?? 0.0
+                        let deskOffset: Float = desk!.deskOffset
+                        let formattedPosition = Float(round(deskPosition + (deskOffset * 100)) / 100)
+//                        let formattedPosition = Double(round(Double(desk!.position) + (desk!.deskOffset * 100)) / 100)
+                        let roundedPosition = Float(round(formattedPosition * 0.5) / 0.5)
+                        self.desk?.position = roundedPosition
                         
                         let requiredPosition = self.moveToPositionValue ?? .nan
                         if (requiredPosition != .nan) {
@@ -134,26 +136,27 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, C
     private func getMovementData(direction: MovementDirection) -> Data {
         switch direction {
         case .up:
-            return withUnsafeBytes(of: valueMoveUp.littleEndian) { Data($0) }
+            return Data(hexString: LinakPeripheral.valueMoveUp)!
         case .down:
-            return withUnsafeBytes(of: valueMoveDown.littleEndian) { Data($0) }
+            return Data(hexString: LinakPeripheral.valueMoveDown)!
         case .stop:
-            return withUnsafeBytes(of: valueStopMove.littleEndian) { Data($0) }
+            return Data(hexString: LinakPeripheral.valueMoveStop)!
         }
     }
     
     private func stopMoving() {
+        self.tableIsMoving = false
         var movementData = getMovementData(direction: .stop)
         self.peripheral?.writeValue(movementData, for: self.characteristicControl, type: CBCharacteristicWriteType.withResponse)
     }
     
-    func moveToPosition(position: Double) {
+    func moveToPosition(position: Float) {
         self.moveToPositionValue = position
         self.handleMoveToPosition()
         print("STARTING TO MOVE TO POSITION \(position)")
         
-        self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true, block: { timer in
-            print("Moving >>> \(self.currentPosition)")
+        self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { timer in
+            print("Moving >>> \(self.desk?.position! ?? 0.0)")
             if self.moveToPositionValue == nil {
                 timer.invalidate()
             } else {
@@ -163,11 +166,15 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate, C
     }
     
     func handleMoveToPosition() {
+        self.updatePosition(characteristic: (self.desk?.positionCharacteristic)!)
         let positionRequired = self.moveToPositionValue ?? .nan
-        if positionRequired < self.currentPosition {
+        if positionRequired < self.desk?.position ?? 0.0 {
             self.moveTable(direction: .down)
-        } else if positionRequired > self.currentPosition {
+        } else if positionRequired > self.desk?.position ?? 0.0 {
             self.moveTable(direction: .up)
+        } else if (positionRequired.distance(to: (self.desk?.position!)!) <= 1) {
+            print("Stopping to move...")
+            self.moveToPositionValue = nil
         }
     }
     
