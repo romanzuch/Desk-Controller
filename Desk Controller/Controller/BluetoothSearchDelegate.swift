@@ -85,9 +85,9 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                     print("Setting characteristicPosition >>> \(characteristic)")
                     self.characteristicPosition = characteristic
                 }
-                if characteristic.uuid == LinakPeripheral.characteristicDPG {
-                    print("Setting characteristicDPG >>> \(characteristic)")
-                }
+//                if characteristic.uuid == LinakPeripheral.characteristicDPG {
+//                    print("Setting characteristicDPG >>> \(characteristic)")
+//                }
             }
         }
     }
@@ -172,11 +172,11 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
                 self.handleMoveToPosition()
                 print("STARTING TO MOVE TO POSITION \(position)")
                 
-                self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true, block: { timer in
+                self.moveToPositionTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { timer in
                     print("Moving >>> \(self.desk?.position! ?? 0.0)")
                     let distance: Float = (self.desk?.position ?? 0.0) - position
                     print("Distance to desired position: \(distance)")
-                    if self.moveToPositionValue == nil || distance <= 0.5 || distance >= -0.5 {
+                    if self.moveToPositionValue == nil || (distance >= -0.5 && distance <= 0.5) {
                         self.stopMoving()
                         timer.invalidate()
                     } else {
