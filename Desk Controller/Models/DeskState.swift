@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum DeskState {
-    case low
-    case mid
-    case high
-    case unknown
+enum DeskState: String, CaseIterable {
+    case low = "DESK_STATE_LOW"
+    case mid = "DESK_STATE_MID"
+    case high = "DESK_STATE_HIGH"
+    case unknown = "DESK_STATE_UNKNOWN"
 }
