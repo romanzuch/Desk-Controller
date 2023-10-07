@@ -115,21 +115,18 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
         if (characteristic.value != nil && characteristic.uuid == LinakPeripheral.characteristicPosition) {
             let byteArray: [UInt8] = [UInt8](characteristic.value!)
             if (byteArray.indices.contains(0) && byteArray.indices.contains(1)) {
-                if let position = byteArray[0] as? Int {
-                    let deskPosition: Float = desk!.position ?? 0.0
-                    let deskOffset: Float = desk!.deskOffset
-                    let formattedPosition = Float(round(deskPosition + (deskOffset * 100)) / 100)
-//                        let formattedPosition = Double(round(Double(desk!.position) + (desk!.deskOffset * 100)) / 100)
-                    let roundedPosition = Float(round(formattedPosition * 0.5) / 0.5)
-                    self.desk?.position = roundedPosition
-                    
-                    let requiredPosition = self.moveToPositionValue ?? .nan
-                    if !requiredPosition.isNaN {
-                        if (formattedPosition > (requiredPosition - 0.75) && formattedPosition < (requiredPosition + 0.75)) {
-                            self.moveToPositionTimer?.invalidate()
-                            self.moveToPositionValue = nil
-                            self.stopMoving()
-                        }
+                let deskPosition: Float = desk!.position ?? 0.0
+                let deskOffset: Float = desk!.deskOffset
+                let formattedPosition = Float(round(deskPosition + (deskOffset * 100)) / 100)
+                let roundedPosition = Float(round(formattedPosition * 0.5) / 0.5)
+                self.desk?.position = roundedPosition
+                
+                let requiredPosition = self.moveToPositionValue ?? .nan
+                if !requiredPosition.isNaN {
+                    if (formattedPosition > (requiredPosition - 0.75) && formattedPosition < (requiredPosition + 0.75)) {
+                        self.moveToPositionTimer?.invalidate()
+                        self.moveToPositionValue = nil
+                        self.stopMoving()
                     }
                 }
             }
