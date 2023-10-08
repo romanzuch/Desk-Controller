@@ -91,4 +91,5 @@ struct MenuButton: View {
     MenuButton(title: "Hoch") {
         // do something
     }
+    .environment(\.locale, .init(identifier: "en"))
 }

@@ -23,23 +23,69 @@ struct MenuView: View {
         VStack {
             // MARK: - Active Controller Menu
             HStack {
-                MenuButton(title: "Hoch", icon: "chevron.up", side: .left) {
+                Button(action: {
                     self.controller.moveTable(.up)
-                }
-                MenuButton(title: "Runter", icon: "chevron.down", side: .right) {
+                }, label: {
+                    HStack {
+                        Image(systemName: "chevron.up")
+                        Text("DIRECTION_UP")
+                    }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.ultraThinMaterial)
+                        }
+                })
+                .buttonStyle(.plain)
+                Button(action: {
                     self.controller.moveTable(.down)
-                }
+                }, label: {
+                    HStack {
+                        Text("DIRECTION_DOWN")
+                        Image(systemName: "chevron.down")
+                    }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.ultraThinMaterial)
+                        }
+                })
+                .buttonStyle(.plain)
             }
             HStack {
-                MenuButton(title: "Hoch") {
+                Button(action: {
                     self.controller.moveTable(to: .high)
-                }
-                MenuButton(title: "Mittel") {
+                }, label: {
+                    Text("STATE_HIGH")
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.ultraThinMaterial)
+                        }
+                })
+                .buttonStyle(.plain)
+                Button(action: {
                     self.controller.moveTable(to: .mid)
-                }
-                MenuButton(title: "Niedrig") {
+                }, label: {
+                    Text("STATE_MID")
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.ultraThinMaterial)
+                        }
+                })
+                .buttonStyle(.plain)
+                Button(action: {
                     self.controller.moveTable(to: .low)
-                }
+                }, label: {
+                    Text("STATE_LOW")
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.ultraThinMaterial)
+                        }
+                })
+                .buttonStyle(.plain)
             }
             
             if btDelegate.tableIsMoving {
@@ -64,4 +110,5 @@ struct MenuView: View {
 
 #Preview {
     MenuView(btDelegate: CBManagerDelegate(), settings: Settings())
+        .environment(\.locale, .init(identifier: "en"))
 }

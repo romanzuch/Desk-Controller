@@ -22,7 +22,7 @@ struct Desk_ControllerApp: App {
         MenuBarExtra {
             MenuView(btDelegate: btDelegate, settings: settings)
         } label: {
-            Label("Table Controller", systemImage: btDelegate.controllerState != .inactive ? "table.furniture.fill" : "table.furniture")
+            Image(systemName: btDelegate.controllerState != .inactive ? "table.furniture.fill" : "table.furniture")
         }.menuBarExtraStyle(.window)
     }
 }

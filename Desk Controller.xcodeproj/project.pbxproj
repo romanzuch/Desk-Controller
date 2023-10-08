@@ -14,8 +14,8 @@
 		30811BC82ACF53CB008FD08D /* SettingsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BC72ACF53CB008FD08D /* SettingsSlider.swift */; };
 		30811BCA2ACF5564008FD08D /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BC92ACF5564008FD08D /* MenuButton.swift */; };
 		30811BCC2ACF573B008FD08D /* IconPlacementSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BCB2ACF573B008FD08D /* IconPlacementSide.swift */; };
+		30B7659E2AD2D9F500AD39D3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30B7659D2AD2D9F500AD39D3 /* Localizable.xcstrings */; };
 		30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */; };
-		30C469F22AC9D2C800019DEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C469F12AC9D2C800019DEE /* ContentView.swift */; };
 		30C469F42AC9D2C900019DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C469F32AC9D2C900019DEE /* Assets.xcassets */; };
 		30C469F72AC9D2C900019DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C469F62AC9D2C900019DEE /* Preview Assets.xcassets */; };
 		30C46A022AC9D2C900019DEE /* Desk_ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C46A012AC9D2C900019DEE /* Desk_ControllerTests.swift */; };
@@ -56,9 +56,9 @@
 		30811BC72ACF53CB008FD08D /* SettingsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSlider.swift; sourceTree = "<group>"; };
 		30811BC92ACF5564008FD08D /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		30811BCB2ACF573B008FD08D /* IconPlacementSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPlacementSide.swift; sourceTree = "<group>"; };
+		30B7659D2AD2D9F500AD39D3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		30C469EC2AC9D2C800019DEE /* Desk Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desk Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerApp.swift; sourceTree = "<group>"; };
-		30C469F12AC9D2C800019DEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30C469F32AC9D2C900019DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30C469F62AC9D2C900019DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30C469F82AC9D2C900019DEE /* Desk_Controller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Desk_Controller.entitlements; sourceTree = "<group>"; };
@@ -119,6 +119,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		30B7659C2AD2D9E500AD39D3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				30B7659D2AD2D9F500AD39D3 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		30C469E32AC9D2C800019DEE = {
 			isa = PBXGroup;
 			children = (
@@ -142,13 +150,13 @@
 		30C469EE2AC9D2C800019DEE /* Desk Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30B7659C2AD2D9E500AD39D3 /* Localization */,
 				3015FEBF2ACB4EF800D9AFE2 /* Services */,
 				30C46A2F2ACB261E00019DEE /* Extensions */,
 				30C46A2E2ACB134900019DEE /* Models */,
 				30C46A232ACAA46800019DEE /* Views */,
 				30C46A1A2AC9E7F700019DEE /* Controller */,
 				30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */,
-				30C469F12AC9D2C800019DEE /* ContentView.swift */,
 				30C469F32AC9D2C900019DEE /* Assets.xcassets */,
 				30C469F82AC9D2C900019DEE /* Desk_Controller.entitlements */,
 				30C469F52AC9D2C900019DEE /* Preview Content */,
@@ -303,11 +311,18 @@
 			};
 			buildConfigurationList = 30C469E72AC9D2C800019DEE /* Build configuration list for PBXProject "Desk Controller" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				nl,
+				da,
+				fr,
+				ru,
+				de,
+				he,
 			);
 			mainGroup = 30C469E32AC9D2C800019DEE;
 			productRefGroup = 30C469ED2AC9D2C800019DEE /* Products */;
@@ -328,6 +343,7 @@
 			files = (
 				30C469F72AC9D2C900019DEE /* Preview Assets.xcassets in Resources */,
 				30C469F42AC9D2C900019DEE /* Assets.xcassets in Resources */,
+				30B7659E2AD2D9F500AD39D3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30811BC82ACF53CB008FD08D /* SettingsSlider.swift in Sources */,
-				30C469F22AC9D2C800019DEE /* ContentView.swift in Sources */,
 				30C46A1E2AC9F5BD00019DEE /* ControllerState.swift in Sources */,
 				30C46A202AC9F5CE00019DEE /* BluetoothSearchDelegate.swift in Sources */,
 				30811BC32ACF2583008FD08D /* DeskController.swift in Sources */,
@@ -544,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -573,7 +588,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "craftcode.Desk-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

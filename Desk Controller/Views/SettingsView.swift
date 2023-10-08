@@ -33,9 +33,51 @@ struct SettingsView: View {
                 // Set the table height preferences
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Voreinstellung Tischhöhe")
-                    SettingsSlider(title: "Hoch", value: $settings.deskSettingHigh, range: 85.0...120.0, cornerRadius: 16, material: .ultraThinMaterial)
-                    SettingsSlider(title: "Mittel", value: $settings.deskSettingMid, range: 65.0...85.0, cornerRadius: 16, material: .ultraThinMaterial)
-                    SettingsSlider(title: "Niedrig", value: $settings.deskSettingLow, range: 40.0...65.0, cornerRadius: 16, material: .ultraThinMaterial)
+                    VStack {
+                        Text("STATE_HIGH")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                        HStack {
+                            Slider(value: $settings.deskSettingHigh, in: 85...120)
+                            Text(String(format: "%.2f", settings.deskSettingHigh))
+                                .font(.caption)
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.ultraThinMaterial)
+                        }
+                    }
+                    VStack {
+                        Text("STATE_MID")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                        HStack {
+                            Slider(value: $settings.deskSettingMid, in: 65...85)
+                            Text(String(format: "%.2f", settings.deskSettingMid))
+                                .font(.caption)
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.ultraThinMaterial)
+                        }
+                    }
+                    VStack {
+                        Text("STATE_LOW")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                        HStack {
+                            Slider(value: $settings.deskSettingLow, in: 40...65)
+                            Text(String(format: "%.2f", settings.deskSettingLow))
+                                .font(.caption)
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.ultraThinMaterial)
+                        }
+                    }
                 }
                 // Current table selection
                 Text("Aktuelle Auswahl: \(self.btDelegate.peripheral?.name ?? "")")
