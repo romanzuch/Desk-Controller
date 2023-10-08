@@ -25,6 +25,9 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
     private var moveToPositionTimer: Timer?
     private var currentMoveDirection: MovementDirection = .stop
     
+    //MARK: - Connection
+    private var connectionTimer: Timer?
+    
     // MARK: - Initialization
     override init() {
         super.init()
@@ -34,14 +37,48 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
     //MARK: - Central Manager
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("The state of the bluetooth manager changed to \(central.state).")
-        if central.state == .poweredOn {
-            central.scanForPeripherals(withServices: nil)
+        self.initiateConnectToDesk()
+    }
+    
+    func initiateConnectToDesk() {
+        if self.cbManager.state == .poweredOn {
+            print("Trying to establish connection.")
+            self.cbManager.scanForPeripherals(withServices: nil)
+        }
+    }
+    
+    func initiateConnectToDesk(handler: @escaping ((Result<CBPeripheral, Error>) -> Void)) {
+        switch self.cbManager.state {
+        case .unknown:
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 404)))
+        case .resetting:
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 204)))
+        case .unsupported:
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 500)))
+        case .unauthorized:
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 501)))
+        case .poweredOff:
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 502)))
+        case .poweredOn:
+            self.cbManager.scanForPeripherals(withServices: nil)
+            self.connectionTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                if let peripheral = self.peripheral {
+                    if let controlCharacteristic = self.desk?.controlCharacteristic {
+                        handler(.success(self.peripheral!))
+                        timer.invalidate()
+                    }
+                }
+            }
+            handler(.failure(NSError(domain: "Bluetooth Connection Error", code: 500)))
         }
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         print(">>> Connection failed when trying to connect to \(peripheral).")
         print(">>> \(String(describing: error?.localizedDescription))")
+        if let timer = self.connectionTimer {
+            timer.invalidate()
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
@@ -65,6 +102,11 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
         self.controllerState = .connected
         self.tableIsConnected = true
         self.peripheral!.discoverServices(LinakPeripheral.allServices)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        self.tableIsConnected = false
+        self.peripheral = nil
     }
     
     //MARK: - Peripheral
@@ -107,7 +149,9 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
         guard let peripheral: CBPeripheral = self.peripheral else { return }
         let movementData: Data = self.getMovementData(direction: direction)
         self.tableIsMoving = true
-        peripheral.writeValue(movementData, for: self.desk!.controlCharacteristic!, type: CBCharacteristicWriteType.withResponse)
+        if let controlCharacteristic = self.desk?.controlCharacteristic {
+            peripheral.writeValue(movementData, for: controlCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
     }
     
     func updatePosition(characteristic: CBCharacteristic) {
