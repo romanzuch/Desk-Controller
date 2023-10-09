@@ -41,7 +41,7 @@ struct MenuButton: View {
         Button(action: {
             action()
         }, label: {
-            Text(title)
+            Text(String(localized: "\(title)"))
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 8)
@@ -57,7 +57,7 @@ struct MenuButton: View {
         }, label: {
             HStack {
                 Image(systemName: icon!)
-                Text(title)
+                Text(String(localized: "\(title)"))
             }
                 .padding()
                 .background {
@@ -73,7 +73,7 @@ struct MenuButton: View {
             action()
         }, label: {
             HStack {
-                Text(title)
+                Text(String(localized: "\(title)"))
                 Image(systemName: icon!)
             }
                 .padding()

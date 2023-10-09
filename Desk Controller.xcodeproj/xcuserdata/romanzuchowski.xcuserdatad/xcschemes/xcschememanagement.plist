@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Desk Controller (EN).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Desk Controller.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>30C469EB2AC9D2C800019DEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30C469FC2AC9D2C900019DEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30C46A062AC9D2C900019DEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
