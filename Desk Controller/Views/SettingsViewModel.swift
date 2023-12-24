@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import CoreBluetooth
+
+class SettingsViewModel: ObservableObject {
+    func getPeripheralName(for peripheral: CBPeripheral) -> String {
+        let linakPeripheral: LinakPeripheral = LinakPeripheral(peripheral: peripheral)
+        if let peripheralName = linakPeripheral.peripheral.name {
+            return peripheralName
+        } else {
+            return ""
+        }
+    }
+}
