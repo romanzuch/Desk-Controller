@@ -88,10 +88,8 @@ struct MenuView: View {
                 .buttonStyle(.plain)
             }
             
-            if btDelegate.tableIsMoving {
-                MenuButton(title: "Stop") {
-                    btDelegate.moveTable(direction: .stop)
-                }
+            MenuButton(title: "Stop") {
+                btDelegate.stopMoving()
             }
             
             // MARK: - Add a button to enable the user to quit the application
