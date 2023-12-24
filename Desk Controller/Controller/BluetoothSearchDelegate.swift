@@ -188,7 +188,7 @@ class CBManagerDelegate: NSObject, ObservableObject, CBCentralManagerDelegate {
         }
     }
     
-    private func stopMoving() {
+    func stopMoving() {
         self.tableIsMoving = false
         let movementData = getMovementData(direction: .stop)
         self.peripheral?.writeValue(movementData, for: (self.desk?.controlCharacteristic!)!, type: CBCharacteristicWriteType.withResponse)
