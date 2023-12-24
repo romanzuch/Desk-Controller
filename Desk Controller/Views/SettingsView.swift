@@ -12,6 +12,7 @@ struct SettingsView: View {
     @EnvironmentObject var btDelegate: CBManagerDelegate
     @EnvironmentObject var settings: Settings
     @State private var showSettings: Bool = false
+    @StateObject private var vm: SettingsViewModel = SettingsViewModel()
     
     
     var body: some View {
@@ -81,14 +82,11 @@ struct SettingsView: View {
                 }
                 // Current table selection
                 Text("Aktuelle Auswahl: \(self.btDelegate.peripheral?.name ?? "")")
-                // Select a table
-//                Picker(selection: $settings.savedPeripheral) {
-//                    ForEach(self.btDelegate.peripheralsAdditional, id: \.name) { peripheral in
-//                        Text(peripheral.name ?? "")
-//                    }
-//                } label: {
-//                    Text("Tisch auswählen")
-//                }
+                
+                Divider()
+                ForEach(self.btDelegate.peripheralsAdditional, id: \.self) { peripheral in
+                    Text(vm.getPeripheralName(for: peripheral))
+                }
             }
         }
     }
