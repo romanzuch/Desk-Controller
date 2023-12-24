@@ -14,6 +14,7 @@
 		30811BC82ACF53CB008FD08D /* SettingsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BC72ACF53CB008FD08D /* SettingsSlider.swift */; };
 		30811BCA2ACF5564008FD08D /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BC92ACF5564008FD08D /* MenuButton.swift */; };
 		30811BCC2ACF573B008FD08D /* IconPlacementSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30811BCB2ACF573B008FD08D /* IconPlacementSide.swift */; };
+		30A3D8402B385384008AB6A8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A3D83F2B385384008AB6A8 /* SettingsViewModel.swift */; };
 		30B7659E2AD2D9F500AD39D3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30B7659D2AD2D9F500AD39D3 /* Localizable.xcstrings */; };
 		30C469F02AC9D2C800019DEE /* Desk_ControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */; };
 		30C469F42AC9D2C900019DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C469F32AC9D2C900019DEE /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		30811BC72ACF53CB008FD08D /* SettingsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSlider.swift; sourceTree = "<group>"; };
 		30811BC92ACF5564008FD08D /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		30811BCB2ACF573B008FD08D /* IconPlacementSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPlacementSide.swift; sourceTree = "<group>"; };
+		30A3D83F2B385384008AB6A8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		30B7659D2AD2D9F500AD39D3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		30C469EC2AC9D2C800019DEE /* Desk Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desk Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C469EF2AC9D2C800019DEE /* Desk_ControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk_ControllerApp.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				30811BC62ACF53BE008FD08D /* Components */,
 				30C46A242ACAA48700019DEE /* MenuView.swift */,
 				30811BC02ACF1FB8008FD08D /* SettingsView.swift */,
+				30A3D83F2B385384008AB6A8 /* SettingsViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				30C46A252ACAA48700019DEE /* MenuView.swift in Sources */,
 				30C46A272ACADDD600019DEE /* MovementDirection.swift in Sources */,
 				30811BCC2ACF573B008FD08D /* IconPlacementSide.swift in Sources */,
+				30A3D8402B385384008AB6A8 /* SettingsViewModel.swift in Sources */,
 				30811BC12ACF1FB8008FD08D /* SettingsView.swift in Sources */,
 				30C46A342ACB351900019DEE /* DeskState.swift in Sources */,
 				30C46A2D2ACB029900019DEE /* LinakPeripheral.swift in Sources */,
